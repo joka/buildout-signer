@@ -1,0 +1,50 @@
+<ruleset>
+
+  <server-settings>
+    <server>localhost:8001</server>
+    <execute-pyref>true</execute-pyref>
+    <dev-allow>127.0.0.1</dev-allow>
+    <dev-htpasswd>deliv-users.htpasswd</dev-htpasswd>
+  </server-settings>
+
+  <proxy path="/_theme">
+    <dest href="{here}/../theme" />
+  </proxy>
+
+
+  <proxy path="/images" class="default">
+      <dest href="http://bildungsstreik-berlin.de/images" />
+  </proxy> 
+  <proxy keep-host="1" path="/">
+    <dest href="http://localhost:8000" />
+    <!--<dest href="http://petitions.open-projects.net" />-->
+    <response rewrite-links="1" />
+  </proxy>
+
+  <!--<theme href="/_theme/theme.html" />-->
+  <theme href="http://bildungsstreik-berlin.de/kontakt" />
+
+<!-- You can use class="..." to specify particular rules for particular paths or hosts:
+
+  <rule class="trac">
+    <drop content="link[href$='/trac.css']" />
+    <replace content="children:#content" theme="children:#theme-content" nocontent="abort" />
+    <append content="children:#mainnav" theme="children:#sidebar" />
+    <append content="children:#metanav" theme="children:#sidebar" />
+  </rule>
+
+-->
+
+  <!-- These are the default rules for anything with class="default" or no class: -->
+  <rule>
+    <!-- You could move the title of the page into the body like this:
+    <replace content="children:title" theme="children:#page-title" nocontent="ignore" move="0" />-->
+    
+    <!--<replace content="children:#content" theme="children:#content" />-->
+    <replace content="children:#petition" theme="children:div.cn" />
+    <!-- You could movee dynamically-generated (or managed) navigation into the page with this:
+    <replace content="children:#menu" href="/theme-files/deliv-sidebar.html" theme="children:#sidebar" />-->
+    
+  </rule>
+
+</ruleset>

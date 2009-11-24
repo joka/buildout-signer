@@ -1,0 +1,13 @@
+
+var RecaptchaState = {
+    challenge : '02wnivg03e586FWytxWZNfZUDlww75hgXoeo9DGSYd94mmsn4Es51PuNLwHkFT3wnr_qViMMmwc8L6mZlBVpR9WEMUTqQRlwCPkWRM0kyHKL9RnAggJNF6U-UuimltPj2SUj5Unt6XSt7HZchZs5OH7js6HBrwiarfcBIPpTPZ3J6rxar4CaGWzJEF8sjAnk5VfPjOwe-GnNn6343v4wReQ-PKlkavu2H-GL-U7559iokMCFVVe7lUNfBjUwG-FSS7IgeQNy6_AajZOMdvteqbzJ26qr8B',
+    timeout : 25000,    
+    server : 'http://api.recaptcha.net/',
+    site : '6LfKSwkAAAAAAOj_fNzkKzjr2tIC-y3qbjF-S2qM',
+    error_message : "There was an error. We're working to fix it. Please try again later.",
+    programming_error : "There was an error. We're working to fix it. Please try again later.",
+    is_incorrect : false
+};
+
+document.write('<scr'+'ipt type="text/javascript" s'+'rc="' + RecaptchaState.server + 'js/recaptcha.js"></scr'+'ipt>');
+

@@ -1,0 +1,474 @@
+/* Start */
+.occupied {
+  height: 220px;
+}
+
+.occupied img {
+  margin-right: 5px;
+}
+
+.occupied ol li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.occupied img, .occupied ol {
+  float: left;
+}
+
+.article {
+  width: 100%;
+  float: left;
+}
+
+.article_side {
+  text-align: center;
+}
+
+.article_side .section {
+  font-style: italic;
+}
+
+.article_side {
+  float: left;
+  width: 30%;
+}
+
+.article_side .meta {
+}
+
+.article_content .title {
+  font-size: 14pt;
+}
+.article_content {
+  float: left;
+  text-align: left;
+  padding-left: 5%;
+  width: 65%;
+}
+
+ol.news, li.news {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+li.news, li.news p {
+  display: inline-block;
+}
+
+li.news {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  list-style-type: none;
+}
+div.big_news {
+  clear: both;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  list-style-type: none;
+}
+
+li.news .section, div.big_news .section {
+  font-size: 10pt;
+  font-style: italic;
+}
+li.news .meta, li.news p , div.big_news .meta, div.big_news .news p{
+  font-size: 8pt;
+}
+
+li.news .title, div.big_news .title {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12pt;
+}
+/* Events */
+
+.sb .meta li {
+  list-style-type: none;
+}
+form.events label {
+  width: 100px;
+  float: left;
+}
+
+li.event {
+
+  list-style-type: none;
+}
+.events li {
+  list-style-type: none;
+  margin-left: 5px;
+  margin-bottom: 0.5em;
+  font-size: 90%;
+}
+
+.events .title a {
+  text-decoration: none;
+  color: #000;
+}
+
+.events {
+  text-align: center;
+}
+
+.events ol {
+  text-align: left;
+}
+
+.events h4 {
+  display:    inline;
+  margin: 0px;
+  padding: 0px;
+  background-color: #666;
+  border-bottom: 1px solid #000;
+  font-size: 10pt;
+  width: 100%;
+  float: left;
+}
+
+h4.otherMonth {
+  font-style: italic;
+  background-color: #999;
+}
+
+.events table {
+  margin: auto;
+}
+
+.events td {
+  margin:     5px;
+  border:     1px solid #000;
+  width:      150px;
+  height:     100px;
+  vertical-align: top;
+}
+
+.events th {
+  border:     1px solid #000;
+  border-bottom: 2px solid #000;
+  vertical-align: middle;
+  height:     40px;
+  background-color: #fef622;
+}
+
+td.today {
+  background-color: #f60;
+}
+
+ol.sections {
+  text-align: center;
+}
+ol.sections li {
+  display: inline; 
+}
+
+span.month {
+  font-size: 20pt;
+}
+
+/* Google Map */
+
+#map {
+  clear: both;
+  width: 350px;
+  height: 350px;
+}
+
+.facts {
+  list-style-type: none;
+}
+
+.facts span {
+  float: left;
+  text-align: left;
+  width: 100px;
+  font-weight: bold;
+}
+
+
+form.events {
+  margin: auto;
+  margin-top: 5px;
+  width: 750px;
+  text-align: left;
+}
+
+form.events input {
+  width: 150px;
+}
+
+form.events input.time {
+  width: 40px;
+}
+
+
+/* Tweets */
+#tweets li {
+  list-style-type: none;
+  margin: 0 0 1em 0;
+}
+#tweets li .author {
+  font-weight:bold;
+}
+#tweets li img {
+  float:right;
+  margin-left:10px;
+}
+#tweets li .meta {
+  color: grey;
+}
+
+/* Articles */
+
+.article {
+  margin-bottom: 2em;
+}
+
+.article .meta {
+  background-color: #fcfcfc;
+  margin: 0 35px;
+}
+
+.article .meta li {
+  display: inline-block;
+  font-size: 90%;
+  margin: 0;
+}
+
+/* Tags */
+.level-5 { font-size: 15pt; }
+.level-4 { font-size: 13pt; }
+.level-3 { font-size: 11pt; }
+.level-2 { font-size: 9pt;  }
+.level-1 { font-size: 7pt;  }
+
+/* Comments */
+
+h3.comment {
+  margin-top: 50px;
+  text-align: left;
+}
+
+form.new_comment fieldset {
+  background-color: #fcfcfc;
+  border-top: 3px solid #f8f8f8;
+  border-bottom: 3px solid #f8f8f8;
+  text-align: center;
+  position: relative;
+}
+
+.divided {
+  width: 50%;
+  float: left;
+}
+
+.inline {
+  float: left;
+  display: inline;
+}
+
+#legend li {
+  display: inline;
+  margin: 0px 5px 0px 0px;
+  padding: 5px;
+  border: 1px dotted #000;
+}
+
+#legend li span.content {
+  float: left;
+  display: none;
+  background-color: #fff;
+  border: 1px dotted #000;
+}
+
+.comment {
+  text-align: right;
+  width: 100%;
+  float: left;
+}
+
+.comment .side {
+  float: left;
+  width: 20%;
+}
+
+.comment .author {
+  font-size: 15pt;
+  letter-spacing: 2px;
+}
+
+.comment .index {
+  letter-spacing: 3px;
+}
+
+.comment .text {
+  float: left;
+  text-align: left;
+  padding-left: 5%;
+  width: 75%;
+}
+
+/* Top Login */
+#extra {
+  height: 6em;
+}
+
+#extra .meta {
+  background-color: #fcfcfc;
+  border: 1px solid lightgrey;
+  height: 4em;
+  margin-top: 1em;
+}
+
+#extra .meta .user {
+  margin-top: 0.5em;
+  margin-left: 1em;
+}
+
+#extra .meta .user {
+  font-weight: bold;
+}
+
+#extra .meta li {
+  display: inline;
+  margin-left: 1em;
+}
+
+#extra .meta li a {
+  color: #000;
+  text-decoration: none;
+}
+
+#extra .login {
+  margin-top: 2em;
+  text-align: right;
+}
+
+#extra .login input {
+  width: 80px;
+  padding: 5px;
+  background-color: #fcfcfc;
+  border: 1px solid lightgrey;
+}
+
+/* Flash Messages */
+
+.flash {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.flash.success, .flash.error, .flash.notice {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.flash .message {
+  width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.flash.success {
+  background-color: #6F6;
+  border-color: #393;
+}
+
+.flash.error {
+  background-color: #DC1D00;
+  border-color: #860700;
+}
+
+.flash.notice {
+  background-color: #FFE860;
+  border-color: #EAC50A;
+}
+
+.center {
+  text-align: center;
+}
+
+div.fieldWithErrors {
+}
+div.fieldWithErrors input {
+  border: 2px solid red;
+}
+
+/* Form elements */
+label {
+  font-weight: bold;
+}
+
+textarea {
+  width: 90%;
+}
+
+#search {
+  width: 100px;
+}
+
+/* Meta */
+
+span.meta {
+  font-wuight: bold;
+}
+
+/* Legend */
+
+span.bold {
+  font-weight: bold;
+}
+
+span.italic {
+  font-style: italic;
+}
+
+span.small {
+  font-size: 8pt;
+}
+
+ul.sblist li {
+  margin: 0px;
+}
+
+li.current {
+  background-color: #ffec01;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+div.center {
+  margin: auto;
+  text-align: center;
+}
+
+.headline {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.eventsStart {
+  margin: 0px;
+  margin-top: 10px;
+  padding: 0px;
+  width: 100%;
+}
+
+.eventsStart, .eventsStart li {
+  list-style-type: none;
+}
+

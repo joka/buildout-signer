@@ -1,0 +1,203 @@
+.spacer {
+  height: 2em;
+}
+
+/* Links */
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+#hd {
+  background-color: #ffec01;
+  height: 6em;
+}
+
+#bn h1 {
+  display: none;
+}
+
+#bn {
+  background-image: url('/images/logoneu.jpg');
+  background-position: 0em 1em;
+  background-repeat:no-repeat;
+  height: 6em;
+}
+
+#bn.fu {
+  background-image: url('/images/logo_fu.png');
+}
+
+#bn.hu {
+  background-image: url('/images/logo_hu.png');
+}
+
+#bn.tu {
+  background-image: url('/images/logo_tu.png');
+}
+
+#bn.schule {
+  background-image: url('/images/logo_schule.png');
+}
+
+#bn.ash{
+  background-image: url('/images/logo_ash.png');
+}
+
+#bn.bht{
+  background-image: url('/images/logo_bht.png');
+}
+
+/* Body */
+#bd {
+  background-image: url('/images/shadow.gif');
+  background-repeat:repeat-x;
+}
+
+/* Navigation */
+#nv {
+  height: 51px;
+  background-image: url('/images/gradient.gif');
+}
+#nv ul {
+  margin: 0 0.5em;
+  text-align: left;
+  *padding-top: 15px;
+}
+#nv li {
+  list-style-type: none;
+  display: inline-block;
+  *display: inline;
+  margin: 18px 1.5em;
+  height: 51px;
+}
+#nv a {
+  text-decoration: none;
+  font-size: 90%;
+  font-weight: bold;
+  color: #fff;
+  font-family:"Helvetica Neue";
+  text-transform: uppercase;
+  /* Nur Safari, Opera, Firefox */
+  text-shadow: #727272 1px 1px 2px;
+}
+
+#nv a:hover {
+  background-color: #fef622;
+}
+
+/* Footer */
+
+#ft h2 {
+  display: none;
+}
+
+/* Box */
+
+.box {
+  padding: 1em 0;
+  margin-bottom: 1em;
+  margin-right: 5px;
+}
+
+/* Layouts */
+
+.sb {
+  margin-top: 1em;
+  background-color: #fcfcfc;
+  border: 1px dotted #999;
+}
+
+.layout_1, .layout_2 {
+  margin-left:auto;
+  margin-right:auto;
+  width:960px;
+}
+
+.layout_2 .sb, .layout_2 .cn, .layout_1 .box,
+.layout_1 .sb, .layout_1 .cn, .layout_2 .box {
+  display:inline;
+  float:left;
+  margin-left:5px;
+  margin-right:5px;
+  position:relative;
+}
+
+.layout_1 .box, .layout_2 .box {
+  margin-left: 0px;
+  margin-right:0px;
+}
+
+/* Layout with wide sidebar */
+.layout_1 .sb {
+  width: 310px;
+}
+
+.layout_1 .sb .box {
+  /* 
+    same as
+    - prefix_1
+    - suffix_1
+  */
+  padding-right: 40px;
+  padding-left: 40px;
+  width: 230px;
+}
+
+.layout_1 .cn {
+  width: 588px;
+  padding-right: 40px;
+}
+
+/* Layout with small sidebar */
+
+.layout_2 .cn {
+  /* Same as
+   * - grid_17
+   * - suffix_1
+  */
+  width: 668px;
+  padding-right: 40px;
+}
+
+.layout_2 .sb {
+  width: 230px;
+}
+
+.layout_2 .box {
+  padding-right: 40px;
+  padding-left: 40px;
+  width: 150px;
+}
+
+.sb h2, .sb h3 {
+  padding: 0.4em 0;
+  margin: 0 0 0 30px;
+}
+
+.right {
+  float: right;
+}
+
+/* Comments */
+
+div.comment_text {
+  width: 50%;
+  float: left;
+}
+
+div.comment_preview {
+  width: 50%;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
