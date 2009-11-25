@@ -1,9 +1,9 @@
 <ruleset>
 
   <server-settings>
-    <server>localhost:8010</server>
+    <server>0.0.0.0:8010</server>
     <execute-pyref>true</execute-pyref>
-    <dev-allow>0.0.0.0</dev-allow>
+    <dev-allow>127.0.0.1</dev-allow>
     <dev-htpasswd>deliv-users.htpasswd</dev-htpasswd>
   </server-settings>
 
@@ -15,19 +15,19 @@
   <proxy path="/images" class="default">
       <dest href="http://bildungsstreik-berlin.de/images" />
   </proxy> 
-  <proxy keep-host="0" path="/">
+
+  <proxy  path="/">
     <dest href="http://localhost:8000" />
-
-    <!--rewrite links kann probleme mit links vom proxy machen-->
-    <response rewrite-links="0" />
+    <!--rewrite links kann probleme mit  relativen links vom proxy machen-->
+    <response rewrite-links="1" />
   </proxy>
-  <proxy keep-host="0" path="/admin" class="admin">
-      <dest href="http://localhost:8000/admin" />
-    <!--rewrite links kann probleme mit links vom proxy machen-->
-    <response rewrite-links="0" />
-  </proxy> 
 
-  <!--<theme href="/_theme/theme.html" />-->
+ <!-- Don't theme the editor, and don't theme Kupu's empty page: --> 
+  <match path="/admin" abort="1" /> 
+  <!--<match path="wildcard:*/emptypage" abort="1" /> -->
+
+
+  <!--<theme href= relativen "/_theme/theme.html" />-->
   <theme href="http://bildungsstreik-berlin.de/kontakt" />
 
 <!-- You can use class="..." to specify particular rules for particular paths or hosts:
@@ -43,19 +43,11 @@
 
   <!-- These are the default rules for anything with class="default" or no class: -->
   <rule>
-    <!-- You could move the title of the page into the body like this:
-    <replace content="children:title" theme="children:#page-title" nocontent="ignore" move="0" />-->
-    
-    <!--<replace content="children:#content" theme="children:#content" />-->
+    <!--<replace conte="hildren:title" theme="children:#page-title" nocontent="ignore" move="0" />-->-->
     <replace content="children:#petition" theme="children:div.cn" />
     <drop  theme="div.sb" />
     <!-- You could movee dynamically-generated (or managed) navigation into the page with this:
     <replace content="children:#menu" href="/theme-files/deliv-sidebar.html" theme="children:#sidebar" />-->
-    
   </rule>
-  <rule class="admin">  
-      <replace content="/body" theme="/body" />
-  </rule>
- 
 
 </ruleset>
