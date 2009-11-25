@@ -1,9 +1,9 @@
 <ruleset>
 
   <server-settings>
-    <server>localhost:8001</server>
+    <server>localhost:8010</server>
     <execute-pyref>true</execute-pyref>
-    <dev-allow>127.0.0.1</dev-allow>
+    <dev-allow>0.0.0.0</dev-allow>
     <dev-htpasswd>deliv-users.htpasswd</dev-htpasswd>
   </server-settings>
 
@@ -15,11 +15,17 @@
   <proxy path="/images" class="default">
       <dest href="http://bildungsstreik-berlin.de/images" />
   </proxy> 
-  <proxy keep-host="1" path="/">
+  <proxy keep-host="0" path="/">
     <dest href="http://localhost:8000" />
-    <!--<dest href="http://petitions.open-projects.net" />-->
-    <response rewrite-links="1" />
+
+    <!--rewrite links kann probleme mit links vom proxy machen-->
+    <response rewrite-links="0" />
   </proxy>
+  <proxy keep-host="0" path="/admin" class="admin">
+      <dest href="http://localhost:8000/admin" />
+    <!--rewrite links kann probleme mit links vom proxy machen-->
+    <response rewrite-links="0" />
+  </proxy> 
 
   <!--<theme href="/_theme/theme.html" />-->
   <theme href="http://bildungsstreik-berlin.de/kontakt" />
@@ -42,9 +48,14 @@
     
     <!--<replace content="children:#content" theme="children:#content" />-->
     <replace content="children:#petition" theme="children:div.cn" />
+    <drop  theme="div.sb" />
     <!-- You could movee dynamically-generated (or managed) navigation into the page with this:
     <replace content="children:#menu" href="/theme-files/deliv-sidebar.html" theme="children:#sidebar" />-->
     
   </rule>
+  <rule class="admin">  
+      <replace content="/body" theme="/body" />
+  </rule>
+ 
 
 </ruleset>
