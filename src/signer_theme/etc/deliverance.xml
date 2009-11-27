@@ -27,7 +27,7 @@
   <!--<match path="wildcard:*/emptypage" abort="1" /> -->
 
 
-  <!--<theme href= relativen "/_theme/theme.html" />-->
+  <!--<theme href="/_theme/theme.html" />-->
   <theme href="http://bildungsstreik-berlin.de/kontakt" />
 
 <!-- You can use class="..." to specify particular rules for particular paths or hosts:
@@ -40,11 +40,12 @@
   </rule>
 
 -->
-
+                     1
   <!-- These are the default rules for anything with class="default" or no class: -->
   <rule>
     <!--<replace conte="hildren:title" theme="children:#page-title" nocontent="ignore" move="0" />-->-->
     <replace content="children:#petition" theme="children:div.cn" />
+    <!--<replace contepetitionldren:div#metainfos"  theme="children:div.sb"   nocontent="ignore"/>-->
     <drop  theme="div.sb" />
     <!-- You could movee dynamically-generated (or managed) navigation into the page with this:
     <replace content="children:#menu" href="/theme-files/deliv-sidebar.html" theme="children:#sidebar" />-->
