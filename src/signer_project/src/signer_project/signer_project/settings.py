@@ -1,16 +1,17 @@
 # Django settings for signer example project.
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG =False
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Nico', 'nico@open-projects.net'),
+    ('Joscha', 'joka@jokasis.de'),
 )
 
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'test.db'             # Or path to database file if using sqlite3.
+DATABASE_NAME = 'db/test.db'             # Or path to database file if using sqlite3. 
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -40,7 +41,7 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+#MEDIA_URL = 'http://petitions.open-projects.net'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -82,8 +83,10 @@ INSTALLED_APPS = (
 
 # signer
 EMAIL_HOST = 'localhost'
-BASE_URL = 'localhost:8000/signer'
-
+BASE_URL = 'petitions.open-projects.net'
+DEFAULT_FROM_EMAIL = 'petitions-no-answer@open-projects.net'
+NR_RECOMMEND_EMAIL_FIELDS = 5
+ 
 try:
     from localsettings import *
 except ImportError:
