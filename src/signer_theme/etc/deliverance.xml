@@ -1,19 +1,19 @@
 <ruleset>
 
   <server-settings>
-    <server>0.0.0.0:8010</server>
+    <server>0.0.0.0:8005</server>
     <execute-pyref>true</execute-pyref>
     <dev-allow>127.0.0.1</dev-allow>
     <dev-htpasswd>deliv-users.htpasswd</dev-htpasswd>
   </server-settings>
 
   <proxy path="/_theme">
-    <dest href="{here}/../theme" />
+      <dest href="{here}/../src/signer_theme/theme/" />
   </proxy>
 
 
   <proxy path="/images" class="default">
-      <dest href="http://bildungsstreik-berlin.de/images" />
+      <dest href="{here}/../src/signer_theme/theme/images/" />
   </proxy> 
 
   <proxy  path="/">
@@ -24,11 +24,24 @@
 
  <!-- Don't theme the editor, and don't theme Kupu's empty page: --> 
   <match path="/admin" abort="1" /> 
+  <match path="/canvas" abort="1" /> 
   <!--<match path="wildcard:*/emptypage" abort="1" /> -->
 
 
-  <!--<theme href="/_theme/theme.html" />-->
-  <theme href="http://bildungsstreik-berlin.de/kontakt" />
+  <theme href="/_theme/theme.html" />
+  <!--<theme href="http://bildungsstreik-berlin.de/kontakt" />-->
+
+                    1
+  <!-- These are the default rules for anything with class="default" or no class: -->
+  <rule>
+    <!--<replace conte="hildren:title" theme="children:#page-title" nocontent="ignore" move="0" />-->-->
+    <replace content="children:#petition" theme="children:div.cn" />
+    <!--<replace contepetitionldren:div#metainfos"  theme="children:div.sb"   nocontent="ignore"/>-->
+    <drop  theme="div.sb" />
+    <!-- You could movee dynamically-generated (or managed) navigation into the page with this:
+    <replace content="children:#menu" href="/theme-files/deliv-sidebar.html" theme="children:#sidebar" />-->
+  </rule>
+
 
 <!-- You can use class="..." to specify particular rules for particular paths or hosts:
 
@@ -40,15 +53,6 @@
   </rule>
 
 -->
-                     1
-  <!-- These are the default rules for anything with class="default" or no class: -->
-  <rule>
-    <!--<replace conte="hildren:title" theme="children:#page-title" nocontent="ignore" move="0" />-->-->
-    <replace content="children:#petition" theme="children:div.cn" />
-    <!--<replace contepetitionldren:div#metainfos"  theme="children:div.sb"   nocontent="ignore"/>-->
-    <drop  theme="div.sb" />
-    <!-- You could movee dynamically-generated (or managed) navigation into the page with this:
-    <replace content="children:#menu" href="/theme-files/deliv-sidebar.html" theme="children:#sidebar" />-->
-  </rule>
+ 
 
 </ruleset>

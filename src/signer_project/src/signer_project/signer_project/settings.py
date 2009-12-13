@@ -62,6 +62,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_cachepurge.middleware.CachePurge',
 )
 
 ROOT_URLCONF = 'signer_project.signer_project.urls'
@@ -73,12 +74,14 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'django_cachepurge',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
     'signer',
+    'signer_facebook',
 )
 
 # signer
@@ -86,7 +89,15 @@ EMAIL_HOST = 'localhost'
 BASE_URL = 'petitions.open-projects.net'
 DEFAULT_FROM_EMAIL = 'petitions-no-answer@open-projects.net'
 NR_RECOMMEND_EMAIL_FIELDS = 5
- 
+
+# signer_facebook
+FACEBOOK_API_KEY = '6a8cd986779e2733a59d865120cce8a6'
+FACEBOOK_SECRET_KEY = 'fab4b9bb3eaa09bb208d9947ac3e607e'
+FACEBOOK_APP_NAME = 'petitionen' 
+
+# django cachepurge
+CACHE_URLS = 'http://127.0.0.1:8010'
+
 try:
     from localsettings import *
 except ImportError:
