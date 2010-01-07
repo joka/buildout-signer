@@ -7,25 +7,29 @@
     <dev-htpasswd>deliv-users.htpasswd</dev-htpasswd>
   </server-settings>
 
+
+ 
+
   <proxy path="/_theme">
-      <dest href="{here}/../src/signer_theme/theme/" />
+      <dest href="{here}/../theme/" />
   </proxy>
 
 
   <proxy path="/images" class="default">
-      <dest href="{here}/../src/signer_theme/theme/images/" />
+      <dest href="{here}/../theme/images/" />
   </proxy> 
 
-  <proxy  path="/">
+  <proxy path="/">
     <dest href="http://localhost:8000" />
     <!--rewrite links kann probleme mit  relativen links vom proxy machen-->
     <response rewrite-links="1" />
   </proxy>
-
- <!-- Don't theme the editor, and don't theme Kupu's empty page: --> 
+  
+  <!-- Don't theme the editor, and don't theme Kupu's empty page: --> 
   <match path="/admin" abort="1" /> 
-  <match path="/canvas" abort="1" /> 
+  <match path="/images" abort="1" /> 
   <!--<match path="wildcard:*/emptypage" abort="1" /> -->
+  
 
 
   <theme href="/_theme/theme.html" />
@@ -35,9 +39,10 @@
   <!-- These are the default rules for anything with class="default" or no class: -->
   <rule>
     <!--<replace conte="hildren:title" theme="children:#page-title" nocontent="ignore" move="0" />-->-->
-    <replace content="children:#petition" theme="children:div.cn" />
+    <replace content="#status" theme="#status" />
+    <replace content="children:#content" theme="children:div.cn" />
+    <replace content="children:#metainfos" theme="children:#meta0" />
     <!--<replace contepetitionldren:div#metainfos"  theme="children:div.sb"   nocontent="ignore"/>-->
-    <drop  theme="div.sb" />
     <!-- You could movee dynamically-generated (or managed) navigation into the page with this:
     <replace content="children:#menu" href="/theme-files/deliv-sidebar.html" theme="children:#sidebar" />-->
   </rule>
@@ -54,5 +59,7 @@
 
 -->
  
+
+
 
 </ruleset>

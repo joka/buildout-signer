@@ -4,7 +4,7 @@ DEBUG = False
 TEMPLATE_DEBUG =False
 
 ADMINS = (
-    ('Nico', 'nico@open-projects.net'),
+#    ('Nico', 'nico@open-projects.net'),
     ('Joscha', 'joka@jokasis.de'),
 )
 

@@ -3,6 +3,11 @@ backend backend0 {
     .port = "8005";
 }
 
+backend backend1 {
+    .host = "127.0.0.1";
+    .port = "8000";
+} 
+
 acl purge {
         "localhost";
         "121.0.0.1";
@@ -12,7 +17,11 @@ acl purge {
 
  
 sub vcl_recv {
-    set req.backend = backend0;
+
+    if (req.url ~ "^/canvas") {
+        set req.backend = backend1;
+        } 
+    else {set req.backend = backend0;}
 
     if (req.request == "PURGE") {
                 if (!client.ip ~ purge) {
@@ -42,17 +51,16 @@ sub vcl_recv {
 }
 
 sub vcl_fetch {
-    #if (req.request == "GET" && req.url ~ "^/static" ) {
-    #    unset obj.http.Set-Cookie;
-    #    set obj.ttl = 30m;
-    #    deliver;
-    #}
     if (req.url ~ "(gif$|css$|jpg$|jpeg$|png$|js$)") {
         unset obj.http.Set-Cookie;
         deliver;
     }
     if (req.url ~ "list/$") {
         set obj.ttl = 1m;
+        deliver;
+    } 
+    if (req.url ~ "invite/$") {
+        set obj.ttl = 15m;
         deliver;
     } 
     if (obj.status >= 300) {
@@ -68,6 +76,10 @@ sub vcl_fetch {
          unset obj.http.Set-Cookie;
         deliver;
     }   
+    #if (req.request == "GET" && req.url ~ "^/canvas" ) {
+    #    pass;
+    #}
+    #unset obj.http.Set-Cookie;
     set obj.ttl = 60m;
     deliver;
 }
