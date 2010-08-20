@@ -76,9 +76,9 @@ sub vcl_fetch {
          unset obj.http.Set-Cookie;
         deliver;
     }   
-    #if (req.request == "GET" && req.url ~ "^/canvas" ) {
-    #    pass;
-    #}
+    if (req.request == "GET" && req.url ~ "^/canvas" ) {
+        pass;
+    }
     #unset obj.http.Set-Cookie;
     set obj.ttl = 60m;
     deliver;
